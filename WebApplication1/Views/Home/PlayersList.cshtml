@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebApplication1.Models.Player>
+
+@{
+    ViewBag.Title = "PlayersList";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "AddPlayer")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Runs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wickets)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Runs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Wickets)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditPlayer", new { id=item.PlayerId }) |
+            @Html.ActionLink("Details", "PlayerDetails", new { id=item.PlayerId }) |
+            @Html.ActionLink("Delete", "DeletePlayer", new { id=item.PlayerId })
+        </td>
+    </tr>
+}
+
+</table>

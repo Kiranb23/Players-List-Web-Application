@@ -1,0 +1,49 @@
+﻿@model WebApplication1.Models.Player
+
+@{
+    ViewBag.Title = "PlayerDetails";
+}
+
+
+<div>
+    <h4>Player Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Role)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Runs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Runs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Wickets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wickets)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditPlayer", new { id = Model.PlayerId }) |
+    @Html.ActionLink("Back to List", "PlayersList")
+</p>
